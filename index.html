@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parabéns, Maria!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Áudio -->
+    <audio id="bg-music" loop>
+      <source src="./eye_of_the_tiger.mp3" type="audio/mpeg" />
+      Seu navegador não suporta áudio.
+    </audio>
+
+    <!-- Botão de início -->
+    <div id="start-screen">
+      <button id="start-btn">Clique aqui se você for a Maria</button>
+    </div>
+
+    <!-- Conteúdo principal (invisível até clique) -->
+    <div id="main-content" style="display: none">
+      <canvas id="confetti-canvas"></canvas>
+
+      <div class="container">
+        <h1>🚴‍♀️ Caraca, Maria!! 🎉</h1>
+        <p class="message">Você pedalou <span id="km">0</span> km!</p>
+        <p class="congrats">Parabéns, estou muito orgulhoso de você!</p>
+        <p class="text">
+          Continue nesse ritmo e logo estará dominando maratonas! 💪
+        </p>
+        <p class="text">
+          Sua dedicação e esforço são inspiradores. Nunca pare de pedalar!
+        </p>
+        <p class="signature">
+          — Com carinho, o melhor programador que você conhece ❤️
+        </p>
+      </div>
+
+      <div class="animal-gifs">
+        <img
+          src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdTc2dnpuemNnZWc0aTVjOHdiMGNiN2VsdmphczU0dmluaTA5OWJwdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6V2Svg0oII2jXmYtXR/giphy.gif"
+          alt="Cachorro malhando"
+        />
+        <img
+          src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3N0ZTd2OTZkcTFvNWtsaDExbTJ0bTNxNHNnNXkwamh4Y2I2Y2hqaCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Pk20jMIe44bHa/giphy.gif"
+          alt="Hamster correndo"
+        />
+        <img
+          src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHUwNnNqMXhmNGFldTZnYmFrMnY3OXFkNzZsZGNkNHA1eXdteWs3YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cLcxtL1z8t8oo/giphy.gif"
+          alt="Cachorros pulando corda"
+        />
+
+        <img
+          src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTh3OWlrY3hvYmlxZnc0MGdzdW40Z2htcXlwODYxNHVyenFvaTE5dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KOWchpAFBtOPm/giphy.gif"
+          alt="Cachorros pulando corda"
+        />
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+      document.getElementById("start-btn").addEventListener("click", () => {
+        const audio = document.getElementById("bg-music");
+        audio.play();
+
+        document.getElementById("start-screen").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+
+        // Inicia o confete e contador de km
+        startCelebration();
+      });
+    </script>
+  </body>
+</html>
